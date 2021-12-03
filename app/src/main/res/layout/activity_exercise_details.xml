@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="409dp"
+            android:layout_height="wrap_content"
+            android:background="@color/light_red"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:navigationIcon="@drawable/ic_arrow_left_white_36dp"
+            app:navigationIconTint="@color/white"
+
+            />
+    </com.google.android.material.appbar.AppBarLayout>
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/exercise_name"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:gravity="center"
+        />
+    <VideoView
+        android:layout_width="match_parent"
+        android:layout_height="250dp">
+
+    </VideoView>
+
+    <ScrollView
+
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+        <TextView
+            android:id="@+id/exercise_description"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:textColor="@color/black"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_gravity="center"
+            android:layout_margin="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/img_btn_category"
+            android:padding="0dp"
+            android:textSize="15dp"
+            android:text="Add Set"/>
+
+        <TableLayout
+        android:id="@+id/table_exercise_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:scrollbars="vertical">
+        <TextView
+            android:textColor="@color/black"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="21/07/2021"/>
+        <TableRow>
+            <TextView
+                android:textColor="@color/black"
+                android:layout_margin="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Weight"/>
+
+            <TextView
+                android:textColor="@color/black"
+                android:layout_margin="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reps"/>
+        </TableRow>
+        <TableRow android:background="@drawable/table_border">
+            <TextView
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/black"
+
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="20"/>
+
+            <TextView
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="12"/>
+
+        </TableRow>
+    </TableLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
+</androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.appcompat.widget.LinearLayoutCompat>

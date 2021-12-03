@@ -1,0 +1,28 @@
+
+[
+  {
+    "name": "Rope Pull-downs",
+    "author": "Mihai",
+    "difficulty": "Easy",
+    "hasReps": true,
+    "isDeletable": false,
+    "reps": 12,
+    "sets": 3,
+    "textDescription": "This is a description",
+    "videoDescription": "This is a video",
+    "imageId": "triceps_rope_pulldown"
+
+  },
+  {
+    "name": "Triceps Push-ups",
+    "author": "Java",
+    "difficulty": "Medium",
+    "hasReps": true,
+    "isDeletable": false,
+    "reps": 12,
+    "sets": 3,
+    "textDescription": "This is a description",
+    "videoDescription": "This is a video",
+    "imageId": "triceps_pushups"
+  }
+]

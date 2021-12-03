@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">FitBud</string>
+    <string name="btn_exercise">Exercises</string>
+    <string name="btn_stretch">Stretches</string>
+    <string name="btn_workout">Workouts</string>
+    <string name="btn_recipe">Meal Recipes</string>
+    <string name="btn_diary">Diary</string>
+    <string name="btn_social">Social Feed</string>
+    <string name="drawer_premium_upgrade">Upgrade To Premium</string>
+    <string name="drawer_account">My Account</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="nav_drawer_open">Open Navigation Drawer</string>
+    <string name="nav_drawer_close">Close Navigation Drawer</string>
+    <!--    Exercises Activity-->
+    <string name="chest">Chest</string>
+    <string name="triceps">Triceps</string>
+    <string name="back">Back</string>
+    <string name="biceps">Biceps</string>
+    <string name="shoulders">Shoulders</string>
+    <string name="legs_Calves">Legs</string>
+    <string name="core">Core</string>
+    <string name="reactive">Reactive Power</string>
+    <string name="balance">Balance</string>
+    <string name="coordination">Coordination</string>
+    <!-- List -->
+    <string name="difficulty">Difficulty: </string>
 </resources>
