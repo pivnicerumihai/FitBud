@@ -32,21 +32,23 @@
         android:textSize="20dp"
         android:gravity="center"
         />
+
+    <ScrollView
+
+        android:layout_gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
     <VideoView
         android:layout_width="match_parent"
         android:layout_height="250dp">
 
     </VideoView>
 
-    <ScrollView
-
-        android:layout_gravity="center_horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-<androidx.appcompat.widget.LinearLayoutCompat
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
         <TextView
             android:id="@+id/exercise_description"
             android:layout_width="match_parent"
@@ -63,53 +65,73 @@
             android:textSize="15dp"
             android:text="Add Set"/>
 
-        <TableLayout
-        android:id="@+id/table_exercise_progress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:scrollbars="vertical">
-        <TextView
-            android:textColor="@color/black"
-            android:gravity="center_horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="21/07/2021"/>
-        <TableRow>
-            <TextView
-                android:textColor="@color/black"
-                android:layout_margin="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Weight"/>
+<!--        <TableLayout-->
+<!--        android:id="@+id/table_exercise_progress"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--            android:padding="10dp"-->
+<!--            android:layout_gravity="center">-->
+<!--        <TextView-->
+<!--            android:textColor="@color/black"-->
+<!--            android:gravity="center_horizontal"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="21/07/2021"/>-->
+<!--        <TableRow>-->
+<!--            <TextView-->
+<!--                android:textColor="@color/black"-->
+<!--                android:layout_margin="5dp"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Weight"/>-->
 
-            <TextView
-                android:textColor="@color/black"
-                android:layout_margin="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Reps"/>
-        </TableRow>
-        <TableRow android:background="@drawable/table_border">
-            <TextView
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:textColor="@color/black"
+<!--            <TextView-->
+<!--                android:textColor="@color/black"-->
+<!--                android:layout_margin="5dp"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Reps"/>-->
+<!--        </TableRow>-->
 
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="20"/>
+<!--            <TableRow android:background="@drawable/table_border">-->
+<!--                <EditText-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:gravity="center"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    />-->
 
-            <TextView
-                android:layout_gravity="center"
-                android:textColor="@color/black"
-                android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="12"/>
+<!--                <EditText-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:gravity="center"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="match_parent" />-->
 
-        </TableRow>
-    </TableLayout>
+<!--            </TableRow>-->
+
+
+<!--&lt;!&ndash;            <TableRow android:background="@drawable/table_border">&ndash;&gt;-->
+<!--&lt;!&ndash;            <TextView&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_gravity="center"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:gravity="center"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:textColor="@color/black"&ndash;&gt;-->
+
+<!--&lt;!&ndash;                android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_height="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:text="20"/>&ndash;&gt;-->
+
+<!--&lt;!&ndash;            <TextView&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_gravity="center"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:textColor="@color/black"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:gravity="center"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_height="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:text="12"/>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        </TableRow>&ndash;&gt;-->
+<!--    </TableLayout>-->
 </androidx.appcompat.widget.LinearLayoutCompat>
     </ScrollView>
 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -17,6 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fitbud.Model.ExerciseClass;
+import com.example.fitbud.Model.ExerciseRecordsClass;
 
 import java.text.BreakIterator;
 import java.util.ArrayList;
@@ -71,11 +72,11 @@ public class ExercisesAdapter extends RecyclerView.Adapter<ExercisesAdapter.View
         @Override
         public void onClick(View view) {
             Intent intent;
-            ExerciseClass selectedExercise;
             intent = new Intent(context.getApplicationContext(),ExerciseDetailsActivity.class);
             for(ExerciseClass exercise : exerciseClassArrayList){
                 if(exercise.getName().equals(list_name.getText())){
                 intent.putExtra("exercise", exercise);
+
                 }
             }
 

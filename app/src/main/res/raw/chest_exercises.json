@@ -10,7 +10,9 @@
                 "sets": 3,
                 "textDescription": "This is a description",
                 "videoDescription": "This is a video",
-                "imageId": "chest_press"
+                "imageId": "chest_press",
+                "records": [{"date":"03/12/2021:", "set": {"12kg": 10,"10kg": 10,"8kg": 8}},
+                        {"date":"03/12/2021:","set": {"12kg": 10,"10kg": 10,"8kg": 8}}]
 
         },
         {
@@ -23,6 +25,9 @@
                 "sets": 3,
                 "textDescription": "This is a description",
                 "videoDescription": "This is a video",
-                "imageId": "pushups"
+                "imageId": "pushups",
+                "records": [{"date":"03/12/2021:", "set": {"12kg": 10,"10kg": 10,"8kg": 8}},
+                        {"date":"03/12/2021:","set": {"12kg": 10,"10kg": 10,"8kg": 8}}]
+
         }
 ]

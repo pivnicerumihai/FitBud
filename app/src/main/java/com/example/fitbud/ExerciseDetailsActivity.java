@@ -27,5 +27,17 @@ public class ExerciseDetailsActivity extends AppCompatActivity {
         exerciseName = findViewById(R.id.exercise_name);
         exerciseName.setText(exercise.getName());
 
+        generateRecordsTables();
+    }
+
+    public void generateRecordsTables(){
+
+        Integer numberOfDays;
+        Integer numberOfSets;
+
+        numberOfDays = exercise.getRecords().size();
+        for (int i = 0; i < numberOfDays; i++){
+         System.out.println("Set number " + i + " " + exercise.getRecords().get(i).getSet());
+        }
     }
 }

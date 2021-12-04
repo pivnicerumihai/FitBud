@@ -17,6 +17,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class ExercisesList extends AppCompatActivity {
     private RecyclerView exerciseRV;
@@ -71,7 +72,6 @@ public class ExercisesList extends AppCompatActivity {
 
         for(ExerciseClass exerciseClass : exercises) {
             exerciseClassArrayList.add(exerciseClass);
-
         }
 
 

@@ -7,6 +7,7 @@ import android.os.Parcelable;
 import java.lang.String;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class ExerciseClass implements Parcelable{
     private int mData;
@@ -21,6 +22,7 @@ public class ExerciseClass implements Parcelable{
     Integer sets;
     String textDescription;
     String videoDescription;
+    ArrayList<ExerciseRecordsClass> records;
 
     public ExerciseClass(String name,
                          String author,
@@ -31,7 +33,8 @@ public class ExerciseClass implements Parcelable{
                          Integer reps,
                          Integer sets,
                          String textDescription,
-                         String videoDescription){
+                         String videoDescription,
+                          ArrayList<ExerciseRecordsClass> records){
 
         this.name = name;
         this.author = author;
@@ -43,6 +46,8 @@ public class ExerciseClass implements Parcelable{
         this.sets = sets;
         this.textDescription = textDescription;
         this.videoDescription = videoDescription;
+        this.records = records;
+
     }
 
     public ExerciseClass(){}
@@ -53,7 +58,7 @@ public class ExerciseClass implements Parcelable{
             return new ExerciseClass(in);
         }
 
-        @Override
+        @Override()
         public ExerciseClass[] newArray(int size) {
             return new ExerciseClass[size];
         }
@@ -144,6 +149,26 @@ public class ExerciseClass implements Parcelable{
         this.imageId = imageId;
     }
 
+    public int getmData() {
+        return mData;
+    }
+
+    public void setmData(int mData) {
+        this.mData = mData;
+    }
+
+    public ArrayList<ExerciseRecordsClass> getRecords() {
+        return records;
+    }
+
+    public void setRecords(ArrayList<ExerciseRecordsClass> records) {
+        this.records = records;
+    }
+
+    public static Creator<ExerciseClass> getCREATOR() {
+        return CREATOR;
+    }
+
     public ExerciseClass(Parcel parcel) {
         this.name = parcel.readString();
         this.author = parcel.readString();
@@ -162,6 +187,7 @@ public class ExerciseClass implements Parcelable{
         this.sets = parcel.readInt();
         this.textDescription = parcel.readString();
         this.videoDescription = parcel.readString();
+        this.records = parcel.readArrayList(ExerciseRecordsClass.class.getClassLoader());
     }
 
     @Override
@@ -188,5 +214,6 @@ public class ExerciseClass implements Parcelable{
         parcel.writeInt(this.reps);
         parcel.writeString(this.textDescription);
         parcel.writeString(this.videoDescription);
+        parcel.writeList(this.records);
     }
 }
