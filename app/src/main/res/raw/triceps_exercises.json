@@ -2,6 +2,7 @@
 [
   {
     "name": "Rope Pull-downs",
+    "category": "triceps",
     "author": "Mihai",
     "difficulty": "Easy",
     "hasReps": true,
@@ -15,6 +16,7 @@
   },
   {
     "name": "Triceps Push-ups",
+    "category": "triceps",
     "author": "Java",
     "difficulty": "Medium",
     "hasReps": true,

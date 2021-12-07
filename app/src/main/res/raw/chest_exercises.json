@@ -2,6 +2,7 @@
 [
         {
                 "name": "Chest Press",
+                "category": "chest",
                 "author": "Mihai",
                 "difficulty": "Easy",
                 "hasReps": true,
@@ -11,12 +12,15 @@
                 "textDescription": "This is a description",
                 "videoDescription": "This is a video",
                 "imageId": "chest_press",
-                "records": [{"date":"03/12/2021:", "set": {"12kg": 10,"10kg": 10,"8kg": 8}},
-                        {"date":"03/12/2021:","set": {"12kg": 10,"10kg": 10,"8kg": 8}}]
+                "records": [{"date":"03/12/2021", "set": {"12 kg": 10,"10 kg": 10,"8 kg": 8}},
+                        {"date":"03/12/2021","set": {"22 kg": 20,"20 kg": 20,"28 kg": 28}},
+                        {"date":"03/12/2021", "set": {"32 kg": 30,"30 kg": 30,"38 kg": 38}}
+                ]
 
         },
         {
                 "name": "Push-ups",
+                "category": "chest",
                 "author": "Java",
                 "difficulty": "Medium",
                 "hasReps": true,
@@ -26,8 +30,8 @@
                 "textDescription": "This is a description",
                 "videoDescription": "This is a video",
                 "imageId": "pushups",
-                "records": [{"date":"03/12/2021:", "set": {"12kg": 10,"10kg": 10,"8kg": 8}},
-                        {"date":"03/12/2021:","set": {"12kg": 10,"10kg": 10,"8kg": 8}}]
+                "records": [{"date":"03/12/2021", "set": {"12 kg": 10,"10 kg": 10,"8 kg": 8}},
+                        {"date":"03/12/2021","set": {"12 kg": 10,"10 kg": 10,"8 kg": 8}}]
 
         }
 ]

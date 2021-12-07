@@ -15,6 +15,7 @@ public class ExerciseClass implements Parcelable{
     String name;
     String author;
     String difficulty;
+    String category;
     Boolean hasReps;
     Boolean hasTimer;
     Boolean isDeletable;
@@ -25,6 +26,7 @@ public class ExerciseClass implements Parcelable{
     ArrayList<ExerciseRecordsClass> records;
 
     public ExerciseClass(String name,
+                         String category,
                          String author,
                          String difficulty,
                          Boolean hasReps,
@@ -48,6 +50,14 @@ public class ExerciseClass implements Parcelable{
         this.videoDescription = videoDescription;
         this.records = records;
 
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public ExerciseClass(){}
@@ -173,6 +183,7 @@ public class ExerciseClass implements Parcelable{
         this.name = parcel.readString();
         this.author = parcel.readString();
         this.difficulty = parcel.readString();
+        this.category = parcel.readString();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             this.hasReps = parcel.readBoolean();
         }
@@ -200,6 +211,7 @@ public class ExerciseClass implements Parcelable{
         parcel.writeString(this.name);
         parcel.writeString(this.author);
         parcel.writeString(this.difficulty);
+        parcel.writeString(this.category);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             parcel.writeBoolean(this.hasReps);
         }
