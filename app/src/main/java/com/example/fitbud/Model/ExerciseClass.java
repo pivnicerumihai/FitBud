@@ -6,7 +6,6 @@ import android.os.Parcelable;
 
 import java.lang.String;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class ExerciseClass implements Parcelable{
@@ -39,6 +38,7 @@ public class ExerciseClass implements Parcelable{
                           ArrayList<ExerciseRecordsClass> records){
 
         this.name = name;
+        this.category = category;
         this.author = author;
         this.difficulty = difficulty;
         this.hasReps = hasReps;

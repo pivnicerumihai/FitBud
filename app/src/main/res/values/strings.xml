@@ -24,4 +24,35 @@
     <string name="coordination">Coordination</string>
     <!-- List -->
     <string name="difficulty">Difficulty: </string>
+    <!--    Add Exercise-->
+    <string name="add_exercise">Add Exercise</string>
+    <string name="muscle_trained">Muscle Trained</string>
+    <string name="upload">Upload Image</string>
+    <string name="optional">(optional)</string>
+    <string name="exercise_name">Exercise Name</string>
+    <!--    Muscle list-->
+    <string-array name="muscle_list">
+        <item>Chest</item>
+        <item>Triceps</item>
+        <item>Shoulders</item>
+        <item>Back</item>
+        <item>Biceps</item>
+        <item>Core</item>
+        <item>Legs</item>
+        <item>Calves</item>
+    </string-array>
+    <!--    Meal List-->
+    <string name="low_carb">Low Carb Recipes</string>
+    <string name="under_400">Under 400 calories</string>
+    <string name="bulk">Recipes for Bulking</string>
+    <string name="vegan">Vegan Recipes</string>
+    <!--    Meal strings-->
+    <string name="cook_time">Avg. Cook. Time: </string>
+    <string name="calories">Total Calories/serving: </string>
+    <string name="carbs">Total Carbs/serving: </string>
+    <string name="protein">Total Proteins/Serving: </string>
+    <string name="fats">Total Fats/Serving: </string>
+    <string name="view_recipe">View Recipe</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="instructions">Instructions</string>
 </resources>

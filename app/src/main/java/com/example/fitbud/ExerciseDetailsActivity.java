@@ -109,6 +109,7 @@ public class ExerciseDetailsActivity extends AppCompatActivity implements View.O
     public TableRow tableRowPerRecord(int record){
         TableRow tableRow = new TableRow(this);
 
+//        add edit text for first table
         if(record == 0){
 
             etReps = new EditText(this);
@@ -118,21 +119,21 @@ public class ExerciseDetailsActivity extends AppCompatActivity implements View.O
 
             etWeight.setInputType(InputType.TYPE_CLASS_NUMBER);
             etWeight.setHint("Weight");
-            etWeight.setHintTextColor(white);
+            etWeight.setHintTextColor(lightRed);
             etWeight.setGravity(Gravity.CENTER);
-            etWeight.setTextColor(Color.WHITE);
+            etWeight.setTextColor(lightRed);
             etWeight.getBackground().setColorFilter(white, PorterDuff.Mode.SRC_IN);
-            etWeight.setBackgroundColor(darkRed);
+            etWeight.setBackgroundColor(white);
             etWeight.setPadding(15,10,15,10);
             etWeight.setTextSize(20);
 
             etReps.setInputType(InputType.TYPE_CLASS_NUMBER);
             etReps.setHint("Reps");
-            etReps.setHintTextColor(white);
+            etReps.setHintTextColor(lightRed);
             etReps.setGravity(Gravity.CENTER);
-            etReps.setTextColor(Color.WHITE);
+            etReps.setTextColor(lightRed);
             etReps.getBackground().setColorFilter(white,PorterDuff.Mode.SRC_IN);
-            etReps.setBackgroundColor(darkRed);
+            etReps.setBackgroundColor(white);
             etReps.setPadding(15,10,15,10);
             etReps.setTextSize(20);
 

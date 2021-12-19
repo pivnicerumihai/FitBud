@@ -1,12 +1,10 @@
 package com.example.fitbud;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,6 +37,7 @@ public class MenuFragment extends Fragment implements  View.OnClickListener{
         btn_stretch.setOnClickListener(this::onClick);
         btn_workout = view.findViewById(R.id.btn_workout);
         btn_recipe = view.findViewById(R.id.btn_recipe);
+        btn_recipe.setOnClickListener(this);
         btn_diary = view.findViewById(R.id.btn_diary);
         btn_social = view.findViewById(R.id.btn_feed);
 
@@ -57,9 +56,12 @@ public class MenuFragment extends Fragment implements  View.OnClickListener{
                 startActivity(intent);
                 break;
             case R.id.btn_stretch:
-                intent = new Intent(getActivity(),ExercisesList.class);
+                intent = new Intent(getActivity(), StretchesList.class);
                 startActivity(intent);
                 break;
+            case R.id.btn_recipe:
+                intent = new Intent(getActivity(), RecipeCategory.class);
+                startActivity(intent);
         }
     }
 }

@@ -1,29 +1,36 @@
 package com.example.fitbud;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.fitbud.Model.ExerciseClass;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.appbar.MaterialToolbar;
-import com.google.gson.Gson;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.Reader;
 import java.util.ArrayList;
-import java.util.HashMap;
 
-public class ExercisesList extends AppCompatActivity {
+public class ExercisesList extends AppCompatActivity implements View.OnClickListener {
+
     private RecyclerView exerciseRV;
     private ArrayList<ExerciseClass> exerciseClassArrayList;
     private String category;
     private MaterialToolbar toolbar;
+    private FloatingActionButton floatingActionButton;
+    private FirebaseFirestore firebaseFirestore;
+    private CollectionReference exercises;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +38,10 @@ public class ExercisesList extends AppCompatActivity {
         setContentView(R.layout.activity_exercises_list);
 
         exerciseRV = findViewById(R.id.RVExercises);
+        floatingActionButton = findViewById(R.id.exercise_fab);
+        floatingActionButton.setOnClickListener(this::onClick);
+        firebaseFirestore = FirebaseFirestore.getInstance();
+
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -39,42 +50,51 @@ public class ExercisesList extends AppCompatActivity {
 
         ab.setDisplayHomeAsUpEnabled(true);
 
-        exerciseClassArrayList = new ArrayList<>();
-        readJSON();
 
-        ExercisesAdapter exercisesAdapter = new ExercisesAdapter(this,exerciseClassArrayList);
+
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
         exerciseRV.setLayoutManager(linearLayoutManager);
-        exerciseRV.setAdapter(exercisesAdapter);
+
+        retrieveExercisesFromDB();
 
     }
 
 
-
-    public ArrayList<ExerciseClass> readJSON(){
-        Gson gson = new Gson();
-        Reader reader;
-        category = getIntent().getStringExtra("category");
-
-        switch(category){
-            case "chest":
-            reader = new InputStreamReader(getResources().openRawResource(R.raw.chest_exercises));
-                break;
-            case "triceps":
-                reader = new InputStreamReader(getResources().openRawResource(R.raw.triceps_exercises));
-                break;
-                default:
-                throw new IllegalStateException("Unexpected value: " + category);
-        }
-        BufferedReader bufferedReader = new BufferedReader(reader);
-
-        ExerciseClass[] exercises = gson.fromJson(bufferedReader, ExerciseClass[].class );
-
-        for(ExerciseClass exerciseClass : exercises) {
-            exerciseClassArrayList.add(exerciseClass);
-        }
+    public void retrieveExercisesFromDB(){
+        exercises = firebaseFirestore.collection("exercise");
+        exerciseClassArrayList = new ArrayList<>();
 
 
-        return exerciseClassArrayList;
-        }
+
+        exercises.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if(task.isSuccessful()){
+                    for(QueryDocumentSnapshot documentSnapshot : task.getResult()){
+                        System.out.println(documentSnapshot.getId() + " => " + documentSnapshot.getData());
+                        exerciseClassArrayList.add(documentSnapshot.toObject(ExerciseClass.class));
+                        System.out.println("TESTING" + documentSnapshot.getData());
+                    populateRecyclerView(exerciseClassArrayList);
+                    }
+
+
+                }
+                else {
+                    System.out.println("Error");
+                }
+            }
+
+        });
+    }
+
+    public void populateRecyclerView(ArrayList<ExerciseClass> exerciseClassArrayList){
+        exerciseRV.setAdapter(new ExercisesAdapter(this,exerciseClassArrayList));
+    }
+
+        @Override
+    public void onClick(View view) {
+        Intent intent;
+        intent = new Intent(this, AddExerciseActivity.class);
+        startActivity(intent);
+    }
 }

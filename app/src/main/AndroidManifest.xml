@@ -10,6 +10,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.NoActionBar">
         <activity
+            android:name=".SingleRecipeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".RecipeListAdapter"
+            android:exported="true" />
+        <activity
+            android:name=".RecipesList"
+            android:exported="true" />
+        <activity
+            android:name=".RecipeCategory"
+            android:exported="true" />
+        <activity
+            android:name=".StretchesList"
+            android:exported="true" />
+        <activity
+            android:name=".AddExerciseActivity"
+            android:exported="true" />
+        <activity
             android:name=".ExerciseDetailsActivity"
             android:exported="true" />
         <activity

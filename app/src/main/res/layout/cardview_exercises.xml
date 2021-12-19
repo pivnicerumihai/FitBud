@@ -35,11 +35,13 @@
 
         />
         <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/layout_difficulty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/category_exercise_difficulty"
             >
             <TextView
+
                 android:text="@string/difficulty"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

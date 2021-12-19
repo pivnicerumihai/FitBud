@@ -63,9 +63,12 @@
             android:layout_height="wrap_content"
             app:backgroundTint="@color/light_red"
             style="@style/img_btn_category"
-            android:padding="0dp"
+            android:padding="5dp"
             android:textSize="15dp"
-            android:text="Add Set"/>
+            android:text="Add Set"
+            app:icon="@drawable/outline_add_white_36"
+            app:iconTint="@color/white"
+            app:iconGravity="end"/>
 <androidx.appcompat.widget.LinearLayoutCompat
     android:id="@+id/exercise_records"
     android:layout_width="match_parent"

@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fitbud.Model.ExerciseClass;
 import com.example.fitbud.Model.ExerciseRecordsClass;
+import com.squareup.picasso.Picasso;
 
 import java.text.BreakIterator;
 import java.util.ArrayList;
@@ -45,7 +46,7 @@ public class ExercisesAdapter extends RecyclerView.Adapter<ExercisesAdapter.View
     public void onBindViewHolder(ExercisesAdapter.ViewHolder holder, int position){
         ExerciseClass exerciseClass = exerciseClassArrayList.get(position);
         holder.list_name.setText(exerciseClass.getName());
-        holder.list_image.setImageURI(Uri.parse("android.resource://"+ context.getPackageName() +"/drawable/" + exerciseClass.getImageId()));
+        Picasso.get().load(exerciseClass.getImageId()).into(holder.list_image);
         holder.list_difficulty.setText(exerciseClass.getDifficulty());
 
     }

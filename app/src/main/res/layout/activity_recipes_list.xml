@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_width="wrap_content">
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        >
+        android:layout_height="wrap_content">
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="409dp"
@@ -19,7 +16,11 @@
             android:theme="?attr/actionBarTheme"
             app:navigationIcon="@drawable/ic_arrow_left_white_36dp"
             app:navigationIconTint="@color/white"
+
             />
     </com.google.android.material.appbar.AppBarLayout>
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_recipe_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </androidx.appcompat.widget.LinearLayoutCompat>
