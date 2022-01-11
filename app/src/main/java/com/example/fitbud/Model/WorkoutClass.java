@@ -1,26 +1,52 @@
 package com.example.fitbud.Model;
 
+import android.os.Build;
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.ArrayList;
 import java.util.Timer;
 
-public class WorkoutClass {
+public class WorkoutClass implements Parcelable {
 
-    Integer id;
+    private String name;
+    private Integer reviews;
     Boolean isSetBased;
     Boolean isTimeBased;
     Boolean isDeletable;
     Integer setsPerExercise;
-    Timer timer;
-    ArrayList exercises;
+    ArrayList<ExerciseClass> exercises;
     Integer averageWorkoutTime;
     Integer restLength;
     String author;
     String difficulty;
-    ArrayList stretches;
-    ArrayList musclesWorked;
+    ArrayList<StretchClass> stretchesList;
+    ArrayList<String> musclesWorked;
 
 
-    public WorkoutClass(Integer id,
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(Integer reviews) {
+        this.reviews = reviews;
+    }
+
+    public static Creator<WorkoutClass> getCREATOR() {
+        return CREATOR;
+    }
+
+    public WorkoutClass(
+                        String name,
+                        Integer reviews,
                         Integer setsPerExercise,
                         Integer averageWorkoutTime,
                         Integer restLength,
@@ -29,11 +55,13 @@ public class WorkoutClass {
                         Boolean isTimeBased,
                         String author,
                         String difficulty,
-                        ArrayList exercises,
-                        ArrayList stretches,
-                        ArrayList musclesWorked,
-                        Timer timer){
-            this.id = id;
+                        ArrayList<ExerciseClass> exercises,
+                        ArrayList<StretchClass> stretchesList,
+                        ArrayList<String> musclesWorked
+                      ){
+
+            this.name = name;
+            this.reviews = reviews;
             this.setsPerExercise = setsPerExercise;
             this.averageWorkoutTime = averageWorkoutTime;
             this.restLength = restLength;
@@ -43,9 +71,8 @@ public class WorkoutClass {
             this.author = author;
             this.difficulty = difficulty;
             this.exercises = exercises;
-            this.stretches = stretches;
+            this.stretchesList = stretchesList;
             this.musclesWorked = musclesWorked;
-            this.timer = timer;
 
     }
 
@@ -53,35 +80,64 @@ public class WorkoutClass {
 
     }
 
-    public Integer getId() {
-        return id;
+    protected WorkoutClass(Parcel in) {
+
+        this.name = in.readString();
+        this.reviews = in.readInt();
+        this.setsPerExercise = in.readInt();
+        this.averageWorkoutTime = in.readInt();
+        this.restLength = in.readInt();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            this.isDeletable = in.readBoolean();
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            this.isSetBased = in.readBoolean();
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            this.isTimeBased = in.readBoolean();
+        }
+        this.author = in.readString();
+        this.difficulty = in.readString();
+        this.exercises = in.readArrayList(ExerciseClass.class.getClassLoader());
+        this.stretchesList = in.readArrayList(StretchClass.class.getClassLoader());
+        this.musclesWorked = in.readArrayList(ArrayList.class.getClassLoader());
+
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    public static final Creator<WorkoutClass> CREATOR = new Creator<WorkoutClass>() {
+        @Override
+        public WorkoutClass createFromParcel(Parcel in) {
+            return new WorkoutClass(in);
+        }
 
-    public Boolean getSetBased() {
+        @Override
+        public WorkoutClass[] newArray(int size) {
+            return new WorkoutClass[size];
+        }
+    };
+
+
+    public Boolean getIsSetBased() {
         return isSetBased;
     }
 
-    public void setSetBased(Boolean setBased) {
+    public void setIsSetBased(Boolean setBased) {
         isSetBased = setBased;
     }
 
-    public Boolean getTimeBased() {
+    public Boolean getIsTimeBased() {
         return isTimeBased;
     }
 
-    public void setTimeBased(Boolean timeBased) {
+    public void setIsTimeBased(Boolean timeBased) {
         isTimeBased = timeBased;
     }
 
-    public Boolean getDeletable() {
+    public Boolean getIsDeletable() {
         return isDeletable;
     }
 
-    public void setDeletable(Boolean deletable) {
+    public void setIsDeletable(Boolean deletable) {
         isDeletable = deletable;
     }
 
@@ -93,19 +149,12 @@ public class WorkoutClass {
         this.setsPerExercise = setsPerExercise;
     }
 
-    public Timer getTimer() {
-        return timer;
-    }
-
-    public void setTimer(Timer timer) {
-        this.timer = timer;
-    }
 
     public ArrayList getExercises() {
         return exercises;
     }
 
-    public void setExercises(ArrayList exercises) {
+    public void setExercises(ArrayList<ExerciseClass> exercises) {
         this.exercises = exercises;
     }
 
@@ -141,21 +190,48 @@ public class WorkoutClass {
         this.difficulty = difficulty;
     }
 
-    public ArrayList getStretches() {
-        return stretches;
+    public ArrayList getStretchesList() {
+        return stretchesList;
     }
 
-    public void setStretches(ArrayList stretches) {
-        this.stretches = stretches;
+    public void setStretches(ArrayList<StretchClass> stretchesList) {
+        this.stretchesList = stretchesList;
     }
 
     public ArrayList getMusclesWorked() {
         return musclesWorked;
     }
 
-    public void setMusclesWorked(ArrayList musclesWorked) {
+    public void setMusclesWorked(ArrayList<String> musclesWorked) {
         this.musclesWorked = musclesWorked;
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+
+
+        parcel.writeString(this.name);
+        parcel.writeInt(this.reviews);
+        parcel.writeInt(this.setsPerExercise);
+        parcel.writeInt(this.averageWorkoutTime);
+        parcel.writeInt(this.restLength);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            parcel.writeBoolean(this.isDeletable);
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            parcel.writeBoolean(this.isSetBased);
+        }
+
+        parcel.writeString(this.author);
+        parcel.writeString(this.difficulty);
+        parcel.writeList(this.exercises);
+        parcel.writeList(this.stretchesList);
+        parcel.writeList(this.musclesWorked);
+    }
 }
 

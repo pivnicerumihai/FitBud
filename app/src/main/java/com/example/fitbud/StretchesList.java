@@ -47,7 +47,6 @@ public class StretchesList extends AppCompatActivity {
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if(task.isSuccessful()){
                     for(QueryDocumentSnapshot documentSnapshot : task.getResult()){
-                        System.out.println("STRETCH" + documentSnapshot.getData());
                         stretchClassArrayList.add(documentSnapshot.toObject(StretchClass.class));
                         populateRecyclerView(stretchClassArrayList);
                     }

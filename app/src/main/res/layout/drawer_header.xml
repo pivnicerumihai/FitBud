@@ -23,17 +23,17 @@
         android:src="@drawable/baseline_account_circle_black_24"
         android:layout_gravity="center"
         />
-    <androidx.appcompat.widget.AppCompatTextView
+    <TextView
+        android:id="@+id/nav_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="E-mail Address"
         style="@style/e_mail"
         android:background="@drawable/navigator_shape"
         />
-    <androidx.appcompat.widget.AppCompatTextView
+    <TextView
+        android:id="@+id/nav_user_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Free User"
         style="@style/user_type"
         android:background="@drawable/navigator_shape" />
 </androidx.appcompat.widget.LinearLayoutCompat>

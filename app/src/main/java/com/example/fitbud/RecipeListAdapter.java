@@ -85,7 +85,7 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.Vi
 
         @Override
         public void onClick(View view) {
-            RecipeClass selectedRecipe = recipeClassArrayList.get(getAdapterPosition()) ;
+
             Intent intent;
             intent = new Intent(context.getApplicationContext(),SingleRecipeActivity.class);
             intent.putParcelableArrayListExtra("recipes", recipeClassArrayList);

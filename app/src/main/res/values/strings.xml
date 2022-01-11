@@ -11,6 +11,53 @@
     <string name="sign_out">Sign Out</string>
     <string name="nav_drawer_open">Open Navigation Drawer</string>
     <string name="nav_drawer_close">Close Navigation Drawer</string>
+
+    <!--    User Details-->
+    <string name="sign_in">Sign In</string>
+    <string name="email">E-mail Address</string>
+    <string name="password">Password</string>
+    <string name="anonymous_signin">Anonymous</string>
+    <string name="register">Register</string>
+    <string name="forgot_password"><u>Forgot Password? Click here to reset it</u></string>
+    <string name="create_account"><b>Create Account</b></string>
+    <string name="username">Username</string>
+    <string name="confirm_email">Confirm E-mail Address</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="profile_photo">Profile Photo</string>
+    <string name="dob">Date of Birth</string>
+    <string name="dob_placeholder">dd/mm/yyyy</string>
+    <string name="available_equipment">Select the equipment available for your workouts:</string>
+    <string name="finish">Finish</string>
+    <!--    Available Equipment-->
+    <string name="bodyweight">Bodyweight</string>
+    <string name="barbell">Barbell</string>
+    <string name="dumbell">Dumbell</string>
+    <string name="resistance_bands">Resistance Bands</string>
+    <string name="cardio_machines">Cardio Machines (e.g. Threadmill, Stepper etc.)</string>
+    <string name="rower">Rower</string>
+    <string name="pull_up_bar">Pull Up Bar</string>
+    <!--Goals-->
+    <string name="goal">My goal is to: </string>
+    <string name="select">Select you preferred measurements</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string-array name="length_measurement">
+        <item>Metric (cm) </item>
+        <item>Imperial (feet)</item>
+    </string-array>
+    <string-array name="weight_measurements">
+        <item>Kilograms (kg)</item>
+        <item>Pounds (lbs)</item>
+    </string-array>
+    <string-array name="goals">
+        <item>Lose Weight</item>
+        <item>Maintain Weight</item>
+        <item>Gain Weight</item>
+    </string-array>
+    <string name="next">Next</string>
+    <string name="skip">Skip >></string>
+    <string name="user_height">My height is: </string>
+    <string name="user_weight">My weight is: </string>
     <!--    Exercises Activity-->
     <string name="chest">Chest</string>
     <string name="triceps">Triceps</string>
@@ -55,4 +102,15 @@
     <string name="view_recipe">View Recipe</string>
     <string name="ingredients">Ingredients</string>
     <string name="instructions">Instructions</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_perform_workout">PerformWorkoutActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_reset_password">ResetPasswordActivity</string>
 </resources>

@@ -3,6 +3,7 @@
     package="com.example.fitbud">
 
     <application
+        android:name=".Model.Global"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -10,10 +11,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.NoActionBar">
         <activity
+            android:name=".ResetPasswordActivity"
+            android:exported="true" />
+        <activity
+            android:name=".WorkoutExercisesAdapter"
+            android:exported="true" />
+        <activity
+            android:name=".GoalsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="true" />
+        <activity
             android:name=".SingleRecipeActivity"
             android:exported="true" />
         <activity
             android:name=".RecipeListAdapter"
+            android:exported="true" />
+        <activity
+            android:name=".PerformWorkoutActivity"
             android:exported="true" />
         <activity
             android:name=".RecipesList"
@@ -31,11 +47,18 @@
             android:name=".ExerciseDetailsActivity"
             android:exported="true" />
         <activity
-            android:name=".ExercisesList"
-            android:exported="true" />
-        <activity
             android:name=".WorkoutActivity"
             android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ExercisesList"
+            android:exported="true">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ExercisesActivity" />
+        </activity>
         <activity
             android:name=".ExercisesActivity"
             android:exported="true"
@@ -45,7 +68,7 @@
                 android:value=".MainActivity" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".WelcomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -36,6 +36,7 @@ public class MenuFragment extends Fragment implements  View.OnClickListener{
         btn_stretch = view.findViewById(R.id.btn_stretch);
         btn_stretch.setOnClickListener(this::onClick);
         btn_workout = view.findViewById(R.id.btn_workout);
+        btn_workout.setOnClickListener(this);
         btn_recipe = view.findViewById(R.id.btn_recipe);
         btn_recipe.setOnClickListener(this);
         btn_diary = view.findViewById(R.id.btn_diary);
@@ -62,6 +63,11 @@ public class MenuFragment extends Fragment implements  View.OnClickListener{
             case R.id.btn_recipe:
                 intent = new Intent(getActivity(), RecipeCategory.class);
                 startActivity(intent);
+                break;
+            case R.id.btn_workout:
+                intent = new Intent(getActivity(), WorkoutActivity.class);
+                startActivity(intent);
+                break;
         }
     }
 }

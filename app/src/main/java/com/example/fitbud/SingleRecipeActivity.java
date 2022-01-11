@@ -58,39 +58,32 @@ public class SingleRecipeActivity extends AppCompatActivity implements SwipeRefr
         ingredients = recipeClassArrayList.get(selectedRecipeIndex).getIngredients();
 
         tvRecipeInstructions = findViewById(R.id.tv_cooking_instructions);
-        tvRecipeInstructions.setText(recipeClassArrayList.get(selectedRecipeIndex).getCookingInstructions());
+        tvRecipeInstructions.setText(recipeClassArrayList.get(selectedRecipeIndex).getCookingInstructions().replace("_b","\n"));
 
         swipeRefreshLayout = findViewById(R.id.recipe_swipe_refresh);
         swipeRefreshLayout.setOnRefreshListener(this);
 
         container = findViewById(R.id.container_single_recipe);
         container.setOnTouchListener(new OnSwipeTouchListener(this){
-            public void onSwipeTop() {
-                Toast.makeText(getBaseContext(), "top", Toast.LENGTH_SHORT).show();
 
-            }
             public void onSwipeRight() {
-                Toast.makeText(getBaseContext(), "right", Toast.LENGTH_SHORT).show();
 
 
                 iterator--;
                 Picasso.get().load(recipeClassArrayList.get(iterator).getImageId()).into(ivRecipeImage);
                 tvRecipeName.setText(recipeClassArrayList.get(iterator).getName());
                 ingredients = recipeClassArrayList.get(iterator).getIngredients();
-                tvRecipeInstructions.setText(recipeClassArrayList.get(iterator).getCookingInstructions());            }
+                tvRecipeInstructions.setText(recipeClassArrayList.get(iterator).getCookingInstructions());
+            }
             public void onSwipeLeft() {
-                Toast.makeText(getBaseContext(), "left", Toast.LENGTH_SHORT).show();
+
                 iterator++;
                 Picasso.get().load(recipeClassArrayList.get(iterator).getImageId()).into(ivRecipeImage);
                 tvRecipeName.setText(recipeClassArrayList.get(iterator).getName());
                 ingredients = recipeClassArrayList.get(iterator).getIngredients();
                 tvRecipeInstructions.setText(recipeClassArrayList.get(iterator).getCookingInstructions());
             }
-            public void onSwipeBottom() {
-                Toast.makeText(getBaseContext(), "bottom", Toast.LENGTH_SHORT).show();
-            }
         });
-
       listIngredients();
 
     }
@@ -98,7 +91,7 @@ public class SingleRecipeActivity extends AppCompatActivity implements SwipeRefr
         for(String ingredient : ingredients){
             TextView tvIngredient = new TextView(this);
             tvIngredient.setTextColor(getResources().getColor(R.color.black));
-            tvIngredient.setText(ingredient);
+            tvIngredient.setText(ingredient.replace("_bullet_", "\u25CF"));
             tvIngredient.setTextSize(16);
             tvIngredient.setPadding(10,10,10,10);
             lvIngredients.addView(tvIngredient);

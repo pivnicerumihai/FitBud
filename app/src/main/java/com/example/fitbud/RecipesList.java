@@ -31,6 +31,7 @@ public class RecipesList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipes_list);
+
         rvRecipes = findViewById(R.id.rv_recipe_list);
         firebaseFirestore = FirebaseFirestore.getInstance();
         intent = getIntent();

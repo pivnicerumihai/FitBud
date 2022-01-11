@@ -10,19 +10,19 @@ import java.util.ArrayList;
 
 public class ExerciseClass implements Parcelable{
     private int mData;
-    String imageId;
-    String name;
-    String author;
-    String difficulty;
-    String category;
-    Boolean hasReps;
-    Boolean hasTimer;
-    Boolean isDeletable;
-    Integer reps;
-    Integer sets;
-    String textDescription;
-    String videoDescription;
-    ArrayList<ExerciseRecordsClass> records;
+    private String imageId;
+    private String name;
+    private String author;
+    private String difficulty;
+    private String category;
+    private Boolean hasReps;
+    private Boolean hasTimer;
+    private Boolean isDeletable;
+    private Integer reps;
+    private Integer sets;
+    private String textDescription;
+    private String videoDescription;
+    private ArrayList<ExerciseRecordsClass> records;
 
     public ExerciseClass(String name,
                          String category,

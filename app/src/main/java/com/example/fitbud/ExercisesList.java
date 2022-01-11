@@ -66,24 +66,18 @@ public class ExercisesList extends AppCompatActivity implements View.OnClickList
 
 
 
-        exercises.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                if(task.isSuccessful()){
-                    for(QueryDocumentSnapshot documentSnapshot : task.getResult()){
-                        System.out.println(documentSnapshot.getId() + " => " + documentSnapshot.getData());
-                        exerciseClassArrayList.add(documentSnapshot.toObject(ExerciseClass.class));
-                        System.out.println("TESTING" + documentSnapshot.getData());
-                    populateRecyclerView(exerciseClassArrayList);
-                    }
+        exercises.get().addOnCompleteListener(task -> {
+            if(task.isSuccessful()){
+                for(QueryDocumentSnapshot documentSnapshot : task.getResult()){
+                    exerciseClassArrayList.add(documentSnapshot.toObject(ExerciseClass.class));
+                populateRecyclerView(exerciseClassArrayList);
+                }
 
 
-                }
-                else {
-                    System.out.println("Error");
-                }
             }
-
+            else {
+                System.out.println("Error");
+            }
         });
     }
 

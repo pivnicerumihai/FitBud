@@ -1,80 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    >
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        >
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:layout_gravity="top"
     >
 
-    <FrameLayout
-        android:layout_width="match_parent"
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1">
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_margin="6dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="18dp"
+        android:elevation="10dp">
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="150dp"
             android:background="@drawable/images"
-            android:contentDescription="@string/btn_exercise" />
+            android:contentDescription="@string/btn_exercise"
+            android:scaleType="centerCrop"/>
 
         <com.google.android.material.button.MaterialButton
             style="@style/img_btn"
             android:id="@+id/btn_exercise"
             android:text="@string/btn_exercise" />
-    </FrameLayout>
+    </com.google.android.material.card.MaterialCardView>
 
-    <FrameLayout
-        android:layout_width="match_parent"
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1">
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_margin="7dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="18dp"
+        android:elevation="10dp">
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/images"
-            android:contentDescription="@string/btn_stretch" />
+            android:layout_height="150dp"
+            android:background="@drawable/stretches"
+            android:contentDescription="@string/btn_stretch"
+            android:scaleType="centerCrop"
+
+
+            />
 
         <com.google.android.material.button.MaterialButton
             style="@style/img_btn"
             android:id="@+id/btn_stretch"
             android:text="@string/btn_stretch" />
-    </FrameLayout>
-    <FrameLayout
-        android:layout_width="match_parent"
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1">
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_margin="7dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="18dp"
+        android:elevation="10dp">
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/images"
+            android:layout_height="150dp"
+            android:background="@drawable/workout"
             android:contentDescription="@string/btn_workout"
+            android:scaleType="centerCrop"
             />
         <com.google.android.material.button.MaterialButton
             android:text="@string/btn_workout"
             android:id="@+id/btn_workout"
             style="@style/img_btn"
             />
-    </FrameLayout>
-    <FrameLayout
-        android:layout_width="match_parent"
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1">
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_margin="7dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="18dp"
+        android:elevation="10dp">
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/images"
+            android:layout_height="150dp"
+            android:background="@drawable/recipes"
             android:contentDescription="@string/btn_recipe"
+            android:scaleType="centerCrop"
             />
 
         <com.google.android.material.button.MaterialButton
@@ -82,16 +109,21 @@
             android:id="@+id/btn_recipe"
             style="@style/img_btn"
             />
-    </FrameLayout>
-    <FrameLayout
-        android:layout_width="match_parent"
+    </com.google.android.material.card.MaterialCardView>>
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1">
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_margin="7dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="18dp"
+        android:elevation="10dp">
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/images"
+            android:layout_height="200dp"
+            android:background="@drawable/gym_diary"
             android:contentDescription="@string/btn_diary"
+           android:scaleType="centerCrop"
             />
 
         <com.google.android.material.button.MaterialButton
@@ -99,23 +131,28 @@
             android:id="@+id/btn_diary"
             style="@style/img_btn"
             />
-    </FrameLayout>
-    <FrameLayout
-        android:layout_width="match_parent"
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1">
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_margin="7dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="18dp"
+        android:elevation="10dp">
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/images"
+            android:layout_height="200dp"
+            android:background="@drawable/social"
             android:contentDescription="@string/btn_social"
+            android:scaleType="fitXY"
             />
         <com.google.android.material.button.MaterialButton
             android:text="@string/btn_social"
             android:id="@+id/btn_feed"
             style="@style/img_btn"
             />
-    </FrameLayout>
+    </com.google.android.material.card.MaterialCardView>>
 </LinearLayout>
     </ScrollView>
-    </FrameLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>

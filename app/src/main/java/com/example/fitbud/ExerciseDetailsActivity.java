@@ -9,16 +9,19 @@ import android.graphics.PorterDuff;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.InputType;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.fitbud.Model.ExerciseClass;
 import com.google.gson.Gson;
 import com.google.protobuf.StringValue;
@@ -46,6 +49,7 @@ public class ExerciseDetailsActivity extends AppCompatActivity implements View.O
     Integer darkRed;
     Button btnAddSet;
     Integer numberOfDays;
+    private ImageView ivExerciseGif;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,18 +66,23 @@ public class ExerciseDetailsActivity extends AppCompatActivity implements View.O
         extras = getIntent().getExtras();
         exercise = extras.getParcelable("exercise");
 
-        numberOfDays = exercise.getRecords().size();
 
         exerciseDescription = findViewById(R.id.exercise_description);
-        exerciseDescription.setText(exercise.getTextDescription());
+        exerciseDescription.setText(exercise.getTextDescription().replace("_b", "\n"));
         exerciseDescription.setTextColor(white);
+
         exerciseName = findViewById(R.id.exercise_name);
         exerciseName.setText(exercise.getName());
         exerciseName.setTextColor(white);
         recordsContainer = findViewById(R.id.exercise_records);
+        ivExerciseGif = findViewById(R.id.exercise_gif);
 
+        if(exercise.getRecords() != null) {
+            numberOfDays = exercise.getRecords().size();
+            generateRecordsTables();
+        }
 
-        generateRecordsTables();
+        Glide.with(this).load(exercise.getVideoDescription()).into(ivExerciseGif);
     }
 
     public void generateRecordsTables(){

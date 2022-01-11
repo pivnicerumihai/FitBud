@@ -77,7 +77,7 @@ public class ExercisesAdapter extends RecyclerView.Adapter<ExercisesAdapter.View
             for(ExerciseClass exercise : exerciseClassArrayList){
                 if(exercise.getName().equals(list_name.getText())){
                 intent.putExtra("exercise", exercise);
-
+                break;
                 }
             }
 

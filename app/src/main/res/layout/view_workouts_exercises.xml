@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="2dp"
+    app:cardBackgroundColor="@color/white"
+    android:elevation="10dp">
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical">
+    <ImageView
+        android:id="@+id/workout_exercise_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+
+        />
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+    <TextView
+        android:id="@+id/workout_exercise_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="28sp"
+        android:layout_gravity="center"
+        style="@style/img_btn"
+        />
+    <TextView
+        android:id="@+id/workout_sets_and_reps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/img_btn"
+        android:textSize="22sp"
+        android:layout_gravity="center"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</FrameLayout>
+</com.google.android.material.card.MaterialCardView>
